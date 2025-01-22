@@ -37,7 +37,7 @@ public class SecurityConfig {
         http.csrf().disable()
                 .authorizeRequests()
                 // Allow unauthenticated access to signup and Swagger
-                .requestMatchers("/auth/signup/**","/auth/signin/**","/swagger/**", "/swagger-ui/**","/agri-api-docs/**", "/v3/api-docs/**").permitAll()
+                .requestMatchers("/auth/signup/**","/auth/signin/**","/api/{id}/**","/user/new-user/**","/swagger/**", "/swagger-ui/**","/agri-api-docs/**", "/v3/api-docs/**").permitAll()
                 // Authenticate all other requests
                 .anyRequest().authenticated()
                 .and()
